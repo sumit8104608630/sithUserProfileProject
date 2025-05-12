@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     let load=document.getElementById("load");
 
     fetch(`https://randomuser.me/api/`).then(res=>res.json()).then(data=>{
-        load.innerText=""
         load.classList.add("hidden")
+        load.style.display = "none";
         load.classList.remove("bg-white")
         let UserImage=document.getElementById("userProfileImage")
         let emailBtn=document.getElementById("userEmail")
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded",()=>{
         let userPhone=document.getElementById("userPhone")
         let password=document.getElementById("password")
         let userLocation=document.getElementById("userLocation")
-
         let info=data.results[0]
         let name=info.name
         let date=new Date(info.dob.date)
