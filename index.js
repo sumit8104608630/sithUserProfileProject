@@ -18,18 +18,31 @@ document.addEventListener("DOMContentLoaded",()=>{
         let userLocation=document.getElementById("userLocation")
         let info=data.results[0]
         let name=info.name
+        let para=document.getElementById("para")
         let date=new Date(info.dob.date)
         let location=info.location
         UserImage.src=info.picture.medium
          console.log(info)
         headline.innerText=`${name.title} ${name.first} ${name.last}`
         userInfo=data.results[0]
-        emailBtn.addEventListener("mouseover", function () {headline.innerText=info.email});
-        userName.addEventListener("mouseover", function () {headline.innerText=`${name.title} ${name.first} ${name.last}`});
-        userDate.addEventListener("mouseover", function () {headline.innerText=`${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`});
-        userLocation.addEventListener("mouseover",function() {headline.innerText=`${location.postcode}/${location.state}/${location.country}`})
-        userPhone.addEventListener("mouseover",function() {headline.innerText=info.phone})
-        password.addEventListener("mouseover",function() {headline.innerText=info.login.password})
+        emailBtn.addEventListener("mouseover", function () {headline.innerText=info.email
+            para.innerText="My email is"
+        });
+        userName.addEventListener("mouseover", function () {headline.innerText=`${name.title} ${name.first} ${name.last}`
+            para.innerText="My name is"
+        });
+        userDate.addEventListener("mouseover", function () {headline.innerText=`${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`
+            para.innerText="My date of birth is"
+        });
+        userLocation.addEventListener("mouseover",function() {headline.innerText=`${location.postcode}/${location.state}/${location.country}`
+            para.innerText="My address is"
+        });
+        userPhone.addEventListener("mouseover",function() {headline.innerText=info.phone
+            para.innerText="My phone is"
+        });
+        password.addEventListener("mouseover",function() {headline.innerText=info.login.password
+            para.innerText="My password is"
+        });
 
     })
 
